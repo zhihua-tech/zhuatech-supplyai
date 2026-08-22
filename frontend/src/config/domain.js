@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'SUPPLYAI',systemName:'知华供应链风险 AI 平台',englishName:'SUPPLY CHAIN RISK AI',theme:{primary:'#79523c',dark:'#3f352e',accent:'#c99a52'},
  workspace:'集团供应链中心 / 风险控制组',fieldWorkspace:'华东采购中心 / 供应保障组',period:'2026-08-15 · 本周态势',liveText:'供应风险于 10:42 更新',fieldContextLabel:'保障周期',fieldContext:'未来 14 天',fieldUser:'江宁',fieldRole:'供应保障专员',adminUser:'沈川',adminRole:'供应链风控负责人',
