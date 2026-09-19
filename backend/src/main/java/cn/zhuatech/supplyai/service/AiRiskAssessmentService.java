@@ -9,17 +9,30 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/** 依据可解释规则完成 AI 系统上线前风险分级，不依赖外部模型或密钥。 */
+/**
+ * 依据可解释规则完成 AI 系统上线前风险分级，不依赖外部模型或密钥。
+ *
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class AiRiskAssessmentService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String systemName, @NotBlank String useCase,
                           @Min(0) @Max(3) int autonomyLevel, boolean handlesPersonalData,
                           boolean humanOversight, boolean externalImpact,
                           boolean evaluated, boolean transparencyNotice) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String systemName, int riskScore, String riskTier,
                          String releaseDecision, List<String> requiredControls,
                          List<String> evidenceChecklist) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         int score = 15 + request.autonomyLevel() * 18;
         List<String> controls = new ArrayList<>();

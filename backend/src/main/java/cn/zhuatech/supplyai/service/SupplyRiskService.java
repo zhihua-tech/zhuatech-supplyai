@@ -1,8 +1,20 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.supplyai.service;
 import jakarta.validation.constraints.*; import org.springframework.stereotype.Service; import java.util.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service public class SupplyRiskService{
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public Result assess(Request q){int score=0;List<String> signals=new ArrayList<>();if(q.onTimeDeliveryRate()<80){score+=30;signals.add("准时交付率低于八成");}else if(q.onTimeDeliveryRate()<92){score+=15;signals.add("准时交付表现低于目标");}if(q.qualityPassRate()<95){score+=25;signals.add("来料质量一次通过率偏低");}if(q.leadTimeDays()>45){score+=20;signals.add("采购提前期超过四十五天");}if(q.countryRiskScore()>60){score+=15;signals.add("供应地区风险较高");}if(q.singleSourceDependencyPercent()>70){score+=25;signals.add("单一来源依赖程度过高");}if(q.inventoryCoverageDays()<10){score+=20;signals.add("现有库存覆盖不足十天");}score=Math.min(100,score);String level=score>=70?"CRITICAL":score>=40?"WATCH":"STABLE";int buffer=level.equals("CRITICAL")?21:level.equals("WATCH")?14:7;if(signals.isEmpty())signals.add("交付、质量与库存信号保持稳定");String action=level.equals("CRITICAL")?"启动替代供应源并将关键物料提升至战情室":level.equals("WATCH")?"要求供应商提交恢复计划并提高安全库存":"维持月度供应风险复核";return new Result(q.supplierCode(),score,level,buffer,action,signals);}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record Request(@NotBlank String supplierCode,@Min(0) @Max(100) int onTimeDeliveryRate,@Min(0) @Max(100) int qualityPassRate,@Min(0) int leadTimeDays,@Min(0) @Max(100) int countryRiskScore,@Min(0) @Max(100) int singleSourceDependencyPercent,@Min(0) int inventoryCoverageDays){}
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  public record Result(String supplierCode,int riskScore,String riskLevel,int recommendedBufferDays,String recommendedAction,List<String> riskSignals){}
 }

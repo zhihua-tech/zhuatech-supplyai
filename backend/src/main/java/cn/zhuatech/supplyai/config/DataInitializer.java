@@ -1,7 +1,13 @@
 /* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 package cn.zhuatech.supplyai.config;
 import cn.zhuatech.supplyai.model.*; import cn.zhuatech.supplyai.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.time.LocalDate; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration public class DataInitializer {
+ /**
+  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+  */
  @Bean CommandLineRunner seed(OperatingUnitRepository units,WorkRecordRepository orders,ResourceRegisterRepository resources,ReviewRecordRepository reviews,UserRepository users,PasswordEncoder encoder){return args->{if(units.count()>0)return;
  var u1=units.save(new OperatingUnit("SUPPLY-RISK","集团供应风控组","供应链中心",180));var u2=units.save(new OperatingUnit("PURCHASE-EAST","华东采购中心","采购中心",120));var u3=units.save(new OperatingUnit("SUPPLY-ASSURE","供应保障组","运营中心",96));
  var t1=orders.save(new WorkRecord("SR-260815-018","MAT-BRG-017","精密轴承断供风险评估",u1,24,16,1,LocalDate.now().plusDays(1),WorkRecord.Status.RUNNING,"SRM+库存"));
