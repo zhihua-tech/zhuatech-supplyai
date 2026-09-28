@@ -1,5 +1,7 @@
 # ZhuaTech SupplyAI · 供应链风险 AI
 
+[简体中文](README.md) | [English](README.en.md)
+
 [![Java](https://img.shields.io/badge/Java-21-76513d)](backend/pom.xml)
 [![Vue](https://img.shields.io/badge/Vue-3-42b883)](frontend/package.json)
 [![MySQL](https://img.shields.io/badge/MySQL-8-4479a1)](compose.yaml)
