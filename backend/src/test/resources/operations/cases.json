@@ -1,0 +1,63 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "netOrdered": "#90",
+      "deliveryDayDelta": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "delivered": "89"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "dueDate": "2026-10-23"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "deliveryDayDelta": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "dueDate": "2026-10-27"
+    },
+    "expected": {
+      "decision": "REVIEW",
+      "deliveryDayDelta": "#-3"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "dueDate": "2026-10-26"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "actualDate": "2026-10-25"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "delivered": "91"
+    },
+    "expected": {},
+    "error": true
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "slug": "supplyai",
+  "title": "交付提前窗口与净交付缺口",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "ordered",
+      "label": "订单件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "cancelled",
+      "label": "已取消件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "delivered",
+      "label": "已交付件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "dueDate",
+      "label": "约定交期",
+      "type": "DATE"
+    },
+    {
+      "key": "actualDate",
+      "label": "实际交付日",
+      "type": "DATE"
+    },
+    {
+      "key": "earlyDays",
+      "label": "允许提前天",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    },
+    {
+      "key": "lateDays",
+      "label": "允许延后天",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "3650"
+    }
+  ],
+  "columns": [
+    {
+      "key": "netOrdered",
+      "label": "净订单件数"
+    },
+    {
+      "key": "shortQty",
+      "label": "净交付缺口"
+    },
+    {
+      "key": "deliveryDayDelta",
+      "label": "交期偏移天"
+    },
+    {
+      "key": "fillPct",
+      "label": "净交付率%"
+    }
+  ],
+  "description": "同时核对允许提前窗口、延期容忍和扣取消后的净订单数量；超过提前窗口也需复核，不把越早到货视为越好。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-24",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "ordered": "100",
+        "cancelled": "10",
+        "delivered": "90",
+        "dueDate": "2026-10-24",
+        "actualDate": "2026-10-24",
+        "earlyDays": "2",
+        "lateDays": "0"
+      }
+    ]
+  }
+}
