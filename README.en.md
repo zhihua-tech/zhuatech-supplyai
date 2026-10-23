@@ -1,5 +1,9 @@
 [简体中文](README.md) | **English**
 
+## Functional update: Supplier on-time-in-full delivery metrics
+
+Calculates line-based on-time, in-full and OTIF rates from actual delivery evidence, excluding not-yet-due lines from the denominator. Signed-in users can edit inputs and export real computed results. See [API, examples and limitations](docs/AI_OPERATIONS_UPGRADE_20261023.md). No external model calls or automatic business changes; existing licensing and contacts remain unchanged.
+
 # ZhuaTech SupplyAI
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for supply chain, procurement, order, warehouse, and logistics operations.

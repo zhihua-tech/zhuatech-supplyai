@@ -1,5 +1,9 @@
 # ZhuaTech SupplyAI · 供应链风险 AI
 
+## 本次功能更新：供应商按时足量交付统计
+
+按实际收货行计算OTIF、准时率、足量率及未到期订单，区分逾期未交和已交迟到，并按供应商汇总。 登录后从「业务计算工具」使用，支持校验与完整结果导出。详见[算法口径、接口和测试说明](docs/AI_OPERATIONS_UPGRADE_20261023.md)。
+
 [简体中文](README.md) | [English](README.en.md)
 
 [![Java](https://img.shields.io/badge/Java-21-76513d)](backend/pom.xml)
